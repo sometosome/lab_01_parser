@@ -6,17 +6,7 @@
 #include <vector>
 #include <string>
 #include <any>
-
-#include <iostream>
-#include <fstream>
-#include <nlohmann/json.hpp>
-
-
-using nlohmann::json;
-
-json takeJson(int argc, char** argv);
-
-using nlohmann::json;
+#include "nlohmann.hpp"
 
 struct Student {
  public:
