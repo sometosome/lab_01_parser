@@ -26,8 +26,6 @@ string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")
 string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
 string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 
-# new versions of cmake contain gtest search files
-# commented out to increase the build speed.
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
@@ -37,11 +35,14 @@ find_package(nlohmann_json CONFIG REQUIRED)
 add_library(${PROJECT_NAME} STATIC
   # enum your files and delete this comment
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/students.cpp
-)
+        include/nlohmann.hpp)
+target_link_libraries(${PROJECT_NAME} nlohmann_json::nlohmann_json)
 
 add_executable(demo
   ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp
 )
+
+target_link_libraries(demo nlohmann_json::nlohmann_json)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
