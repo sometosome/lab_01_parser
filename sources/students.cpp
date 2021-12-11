@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 
-#include <example.hpp>
+#include <students.hpp>
 
 auto example() -> void {
   throw std::runtime_error("not implemented");
