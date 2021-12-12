@@ -1,4 +1,4 @@
-// Copyright 2021 Your Name <your_email>
+//Copyright 2021 noname
 
 #ifndef INCLUDE_STUDENTS_HPP_
 #define INCLUDE_STUDENTS_HPP_
@@ -6,6 +6,8 @@
 //#include <vector>
 //#include <string>
 #include <any>
+#include <string>
+#include <vector>
 #include "nlohmann.hpp"
 
 struct Student {

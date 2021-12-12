@@ -1,4 +1,4 @@
-//
+//Copyright 2021 noname
 // Created by noname on 12/12/21.
 //
 
@@ -31,7 +31,8 @@ std::string convert(std::any& item)
   return ss.str();
 }
 
-void print(std::string s1, std::string s2, std::string s3, std::string s4, std::ostream& os)
+void print(std::string s1, std::string s2, std::string s3,
+           std::string s4, std::ostream& os)
 {
   os << "| " << std::setw(20) << std::left << s1 << "| "
      <<  std::setw(10) << std::left << s2 << "| "
@@ -42,7 +43,8 @@ void print(std::string s1, std::string s2, std::string s3, std::string s4, std::
 
 void print(Student& student, std::ostream& os)
 {
-  print(student.name, convert(student.group), convert(student.avg), convert(student.debt), os);
+  print(student.name, convert(student.group),
+        convert(student.avg), convert(student.debt), os);
 }
 
 void print(std::vector<Student>& students, std::ostream& os)

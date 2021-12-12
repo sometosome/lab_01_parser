@@ -1,10 +1,11 @@
-// Copyright 2021 Your Name <your_email>
+//Copyright 2021 noname
 
 #include <students.hpp>
 
 Student::Student() = default;
 
-Student::Student(std::string _name, std::any _group, std::any _avg, std::any _debt) {
+Student::Student(std::string _name, std::any _group, std::any _avg,
+                 std::any _debt) {
   name = std::move(_name);
   group = std::move(_group);
   avg = std::move(_avg);
@@ -24,7 +25,8 @@ bool anyDate(std::any a1, std::any a2)
   if (a1.type() == typeid(size_t))
     return std::any_cast<size_t>(a1) == std::any_cast<size_t>(a2);
   if (a1.type() == typeid(std::vector<std::string>))
-    return std::any_cast<std::vector<std::string>>(a1) == std::any_cast<std::vector<std::string>>(a2);
+    return std::any_cast<std::vector<std::string>>(a1) ==
+           std::any_cast<std::vector<std::string>>(a2);
   return false;
 }
 bool Student::operator == (const Student& student) const

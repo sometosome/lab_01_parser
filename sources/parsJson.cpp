@@ -1,4 +1,4 @@
-//
+//Copyright 2021 noname
 // Created by noname on 12/12/21.
 //
 
@@ -34,5 +34,5 @@ std::vector<Student> parsJson(json& data)
     auto student = item.get<Student>();
     students2.push_back(student);
   }
-  return students2;
+  return students;
 }
