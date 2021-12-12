@@ -2,6 +2,8 @@
 
 #include <students.hpp>
 
+Student::Student() = default;
+
 Student::Student(std::string _name, std::any _group, std::any _avg, std::any _debt) {
   name = std::move(_name);
   group = std::move(_group);
@@ -25,7 +27,7 @@ bool anyDate(std::any a1, std::any a2)
     return std::any_cast<std::vector<std::string>>(a1) == std::any_cast<std::vector<std::string>>(a2);
   return false;
 }
-bool Student::operator==(const Student& student) const
+bool Student::operator == (const Student& student) const
 {
   bool n =  name == student.name;
   bool g = anyDate(group, student.group);

@@ -12,7 +12,7 @@ struct Student {
  public:
   Student();
   Student(std::string _name, std::any _group, std::any _avg, std::any _debt);
-  bool operator==(Student const & student) const;
+  bool operator == (Student const & student) const;
   std::string name;
   std::any group;
   std::any avg;
