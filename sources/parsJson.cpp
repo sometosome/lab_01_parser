@@ -28,11 +28,11 @@ std::vector<Student> parsJson(json& data)
     from_json(item, student1);
     students.push_back(student1);
   }
-
-  std::vector<Student> students2;
-  for (auto const& item : data.at("items")) {
-    auto student = item.get<Student>();
-    students2.push_back(student);
-  }
+//
+//  std::vector<Student> students2;
+//  for (auto const& item : data.at("items")) {
+//    auto student = item.get<Student>();
+//    students2.push_back(student);
+//  }
   return students;
 }

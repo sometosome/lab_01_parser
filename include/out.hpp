@@ -2,8 +2,8 @@
 // Created by noname on 12/11/21.
 //
 
-#ifndef TEMPLATE_OUT_HPP_
-#define TEMPLATE_OUT_HPP_
+#ifndef INCLUDE_OUT_HPP_
+#define INCLUDE_OUT_HPP_
 
 #include "students.hpp"
 #include <iomanip>
@@ -17,4 +17,4 @@ void print(std::string s1, std::string s2, std::string s3,
 
 void print(std::vector<Student>& students, std::ostream& os);
 
-#endif  // TEMPLATE_OUT_HPP_
+#endif  // INCLUDE_OUT_HPP_
