@@ -3,8 +3,8 @@
 #ifndef INCLUDE_STUDENTS_HPP_
 #define INCLUDE_STUDENTS_HPP_
 
-#include <vector>
-#include <string>
+//#include <vector>
+//#include <string>
 #include <any>
 #include "nlohmann.hpp"
 
@@ -19,14 +19,8 @@ struct Student {
   std::any debt;
 };
 
-void print(Student& student, std::ostream& os);
-
-void print(std::string s1, std::string s2, std::string s3, std::string s4, std::ostream& os);
-
-void print(std::vector<Student>& students, std::ostream& os);
-
 void from_json(const json& j, Student& s);
 
-std::vector<Student> parsingJson(json& data);
+std::vector<Student> parsJson(json& data);
 
 #endif // INCLUDE_STUDENTS_HPP_

@@ -12,6 +12,4 @@ using nlohmann::json;
 
 json takeJson(int argc, char** argv);
 
-using nlohmann::json;
-
 #endif  // TEMPLATE_NLOHMANN_HPP
