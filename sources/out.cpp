@@ -22,7 +22,7 @@ std::string convert(std::any& item)
   if (item.type() == typeid(std::vector<std::string>)){
     ss << std::any_cast<std::vector<std::string>>(item).size();
     auto str = ss.str() + " items";
-    return ss.str();
+    return str;
   }
   if (item.type() == typeid(size_t)){
     ss << std::any_cast<size_t>(item);
