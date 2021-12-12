@@ -6,6 +6,7 @@
 #define TEMPLATE_NLOHMANN_HPP
 
 #include <nlohmann/json.hpp>
+#include <fstream>
 
 
 using nlohmann::json;
