@@ -27,15 +27,15 @@ TEST(printTest, StudentsArray) {
   std::stringstream ss;
   std::vector<Student> students;
   students.emplace_back("test", (std::string)"test",
-                        (size_t)3, std::vector<std::string>());
+                        (size_t)3, (std::string)"0");
   students.emplace_back("test", (size_t)4,
-                        (double)3.33, std::vector<std::string>());
+                        (double)3.33, (std::string)"debt");
   print(students, ss);
   ASSERT_EQ("| name                | group     | avg       | debt      |\n"
       "|---------------------|-----------|-----------|-----------|\n"
       "| test                | test      | 3         | 0         |\n"
       "|---------------------|-----------|-----------|-----------|\n"
-      "| test                | 4         | 3.33      | 0         |\n"
+      "| test                | 4         | 3.33      | debt      |\n"
       "|---------------------|-----------|-----------|-----------|\n",  ss.str());
 }
 
@@ -57,7 +57,7 @@ TEST(printTest, json)
       "      \"debt\": \"C++\"\n"
       "    },\n"
       "    {\n"
-      "      \"name\": \"Pertov Nikita\",\n"
+      "      \"name\": \"Petrov Nikita\",\n"
       "      \"group\": \"IU8-31\",\n"
       "      \"avg\": 3.33,\n"
       "      \"debt\":  [\n"
@@ -82,7 +82,7 @@ TEST(printTest, json)
       "|---------------------|-----------|-----------|-----------|\n"
       "| Sidorov Ivan        | 31        | 4         | C++       |\n"
       "|---------------------|-----------|-----------|-----------|\n"
-      "| Pertov Nikita       | IU8-31    | 3.33      | 3         |\n"
+      "| Petrov Nikita       | IU8-31    | 3.33      | 3 items   |\n"
       "|---------------------|-----------|-----------|-----------|\n", ss.str());
 }
 
@@ -114,7 +114,7 @@ TEST(parseTest, jsonParse)
       Student("Ivanov Petr", (std::string)"1",
               (std::string)"4.25", nullptr),
       Student("Sidorov Ivan", (size_t)31,
-              (double)4, (std::string)"C++")
+              (size_t)4, (std::string)"C++")
   };
   ASSERT_EQ(student_inited, students_parsed);
 }
@@ -138,7 +138,7 @@ TEST(parseTest, fromFile)
       "    }\n"
       "  ],\n"
       "  \"_meta\": {\n"
-      "    \"count\": 3\n"
+      "    \"count\": 2\n"
       "  }\n"
       "}";
   nlohmann::json json1 = json::parse(jsonData);
