@@ -16,7 +16,7 @@
 TEST(printTest, StudentItem)
 {
   std::stringstream ss;
-  Student s("test", (std::string)"test", (size_t)3, std::vector<std::string>());
+  Student s("test", (std::string)"test", (size_t)3, (std::string)"0");
   print(s, ss);
   ASSERT_EQ("| test                | test      | 3         | 0         |\n"
       "|---------------------|-----------|-----------|-----------|\n",  ss.str());
