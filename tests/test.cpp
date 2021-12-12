@@ -114,7 +114,7 @@ TEST(parseTest, jsonParse)
       Student("Ivanov Petr", (std::string)"1",
               (std::string)"4.25", nullptr),
       Student("Sidorov Ivan", (size_t)31,
-              (size_t)4, (std::string)"C++")
+              (double)4, (std::string)"C++")
   };
   ASSERT_EQ(student_inited, students_parsed);
 }
